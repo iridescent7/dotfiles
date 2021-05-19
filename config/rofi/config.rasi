@@ -1,0 +1,11 @@
+configuration {
+    modi: "drun";
+    location: 2;
+    width: 30;
+    columns: 2;
+    theme: "nord";
+    font: "IBM Plex Mono Semibold 11";
+    icon-theme: "Papirus";
+    show-icons: true;
+    fixed-num-lines: false;
+}

@@ -1,0 +1,237 @@
+[bar/single]
+monitor =
+bottom = false
+
+fixed-center = true
+
+width = 100%
+height = 20
+
+background = #D92E3440
+foreground = #000
+
+line-size = 2
+line-color = #fff
+
+padding-right = 3
+module-margin = 1
+
+font-0 = JetBrains Mono:style=Semibold:size=11;3
+font-1 = Font Awesome 5 Free:style=Solid:size=11;3
+font-2 = Cantarell:style=Bold:size=11;3
+
+modules-left = i3 title
+modules-center = date
+modules-right = ${env:BAR_MODULES_RIGHT}
+
+separator =
+dim-value = 1.0
+
+wm-name = polybar
+tray-position = right
+
+tray-detached = false
+tray-maxsize = 16
+tray-background = ${root.background}
+
+tray-padding = 0
+tray-scale = 1.0
+
+wm-restack = i3
+override-redirect = true
+
+dpi-x = 96
+dpi-y = 96
+
+enable-ipc = false
+
+[bar/multi]
+inherit = bar/single
+monitor = ${env:MONITOR}
+
+[module/i3]
+type = internal/i3
+
+pin-workspaces = true
+enable-click = true
+enable-scroll = false
+wrapping-scroll = false
+reverse-scroll = false
+
+label-focused = %index%
+label-focused-background = #4C566A
+label-focused-padding = 1
+label-focused-foreground = #D8DEE9
+
+label-unfocused = %index%
+label-unfocused-padding = 1
+label-unfocused-foreground = #D8DEE9
+
+label-visible = %index%
+label-visible-padding = 1
+label-visible-foreground = #D8DEE9
+
+label-urgent = %index%
+label-urgent-background = #BF616A
+label-urgent-padding = 1
+label-urgent-foreground = #D8DEE9
+
+[module/title]
+type = internal/xwindow
+
+format = <label>
+format-background = #2e3440
+format-foreground = #d8dee9
+
+label = %title%
+label-maxlen = 50
+
+label-empty =
+label-empty-foreground = #d8dee9
+
+[module/date]
+type = internal/date
+interval = 1.0
+
+date = %d/%m/%Y
+time = %I:%M %p
+
+date-alt = %A, %d %B %Y
+time-alt = %I:%M:%S %p
+
+label = %date% %time%
+label-font = 0
+label-foreground = #D8DEE9
+
+[module/net-wired]
+type = internal/network
+interface = ${env:NET_WIRED_INTERFACE}
+
+format-connected = <ramp-signal> <label-connected>
+label-connected = LAN
+label-connected-foreground = #A3BE8C
+
+format-disconnected =
+
+ramp-signal-foreground = #A3BE8C
+ramp-signal-0 = 
+
+[module/net-wireless]
+type = internal/network
+interface = wlo1
+
+format-connected = <ramp-signal> <label-connected>
+label-connected = %essid%
+label-connected-foreground = #A3BE8C
+
+format-disconnected =
+
+ramp-signal-foreground = #A3BE8C
+ramp-signal-0 = 
+ramp-signal-1 = 
+ramp-signal-2 = 
+ramp-signal-3 = 
+ramp-signal-4 = 
+ramp-signal-5 = 
+
+[module/audio]
+type = internal/pulseaudio
+
+format-volume = <label-volume>
+label-volume =  %percentage%%
+label-volume-foreground = #ebcb8b
+
+label-muted = 
+label-muted-foreground = #ebcb8b
+
+[module/cpu]
+type = internal/cpu
+interval = 1.0
+
+label =  %percentage:2%%
+label-foreground = #81A1C1
+
+[module/memory]
+type = internal/memory
+
+interval = 1.0
+format = <label>
+
+label =  %gb_used%
+label-foreground = #B48EAD
+
+[module/temperature]
+type = internal/temperature
+
+interval = 1.0
+thermal-zone = 0
+
+hwmon-path = /sys/devices/platform/coretemp.0/hwmon/hwmon6/temp1_input
+warn-temperature = 80
+
+format = <label>
+format-warn = <label-warn>
+
+label =  %temperature-c%
+label-foreground = #d08770
+
+label-warn =  %temperature-c%
+label-warn-foreground = #BF616A
+
+[module/battery]
+type = internal/battery
+
+full-at = 99
+
+battery = BAT0
+adapter = AC0
+
+poll-interval = 5
+time-format = %H:%M
+
+format-charging = <animation-charging> <label-charging>
+format-discharging = <ramp-capacity> <label-discharging>
+format-full = <ramp-capacity> <label-full>
+
+label-charging = %percentage:2%%
+label-charging-foreground = #A3BE8C
+
+label-discharging = %percentage:2%%
+label-discharging-foreground = #EDB54B
+
+label-full = %percentage:2%%
+label-full-foreground = #A3BE8C
+
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+ramp-capacity-foreground = #EDB54B
+
+bar-capacity-width = 10
+
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+animation-charging-foreground = #A3BE8C
+animation-charging-framerate = 750
+
+animation-discharging-0 = 
+animation-discharging-1 = 
+animation-discharging-2 = 
+animation-discharging-3 = 
+animation-discharging-4 = 
+animation-discharging-foreground = #DCA060
+animation-discharging-framerate = 500
+
+[module/decor-glyph]
+type = custom/text
+content-foreground = #4C566A
+margin = 0
+
+[module/sep]
+inherit = module/decor-glyph
+content = "/"
