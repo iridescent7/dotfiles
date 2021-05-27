@@ -20,7 +20,7 @@ font-0 = JetBrains Mono:style=Semibold:size=11;3
 font-1 = Font Awesome 5 Free:style=Solid:size=11;3
 font-2 = Cantarell:style=Bold:size=11;3
 
-modules-left = i3 title
+modules-left = i3 sep title
 modules-center = date
 modules-right = ${env:BAR_MODULES_RIGHT}
 
@@ -40,8 +40,7 @@ tray-scale = 1.0
 wm-restack = i3
 override-redirect = true
 
-dpi-x = 96
-dpi-y = 96
+dpi = 96
 
 enable-ipc = false
 
@@ -81,7 +80,7 @@ type = internal/xwindow
 
 format = <label>
 format-background = #2e3440
-format-foreground = #d8dee9
+format-foreground = #A3BE8C
 
 label = %title%
 label-maxlen = 50
@@ -101,7 +100,7 @@ time-alt = %I:%M:%S %p
 
 label = %date% %time%
 label-font = 0
-label-foreground = #D8DEE9
+label-foreground = #d8dee9
 
 [module/net-wired]
 type = internal/network

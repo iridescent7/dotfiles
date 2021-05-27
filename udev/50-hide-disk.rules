@@ -1,1 +1,0 @@
-KERNEL=="nvme0n1p[0-9]", ENV{UDISKS_IGNORE}="1"

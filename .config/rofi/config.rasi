@@ -2,6 +2,7 @@ configuration {
     modi: "drun";
     location: 2;
     width: 30;
+    dpi: 96;
     columns: 2;
     theme: "nord";
     font: "IBM Plex Mono Semibold 11";

@@ -3,9 +3,11 @@ exec --no-startup-id xiccd
 exec --no-startup-id brightnessctl s 12%
 exec --no-startup-id brightnessctl -dasus::kbd_backlight s 0
 
+exec --no-startup-id xrdb -merge ~/.Xresources
+
 exec --no-startup-id ~/.fehbg
 exec --no-startup-id picom
-exec --no-startup-id ~/.config/polybar/launch_multi.sh
+exec --no-startup-id ~/.scripts/launch_polybar.sh auto
 
 exec --no-startup-id dunst
 exec --no-startup-id clipit -d
@@ -39,7 +41,6 @@ bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl s 10%-
 floating_modifier $mod
 
 bindsym $mod+d exec rofi -show drun
-bindsym $mod+e exec kitty --class ranger -e ranger
 bindsym $mod+s exec flameshot gui -p ~/Pictures/Screenshots
 bindsym Print exec flameshot full -p ~/Pictures/Screenshots
 
@@ -69,18 +70,21 @@ bindsym $mod+f fullscreen toggle
 
 bindsym $mod+q layout stacking
 bindsym $mod+w layout tabbed
-bindsym $mod+v layout toggle split
+bindsym $mod+e layout toggle split
 
 bindsym $mod+Shift+f floating toggle
 bindsym $mod+Shift+d focus mode_toggle
 
-bindsym $mod+p exec mons -o && ~/.config/polybar/launch.sh
-bindsym $mod+Shift+p exec mons -s && ~/.config/polybar/launch.sh
+bindsym $mod+p exec ~/.scripts/change_monitor.sh laptop
+bindsym $mod+Shift+p exec ~/.scripts/change_monitor.sh hdmi
 
-bindsym $mod+Shift+less exec mons -e left && ~/.config/polybar/launch_multi.sh
-bindsym $mod+Shift+greater exec mons -e right && ~/.config/polybar/launch_multi.sh
+bindsym $mod+Shift+less exec ~/.scripts/change_monitor.sh extend_left
+bindsym $mod+Shift+greater exec ~/.scripts/change_monitor.sh extend_right
 
-bindsym $mod+Shift+slash exec mons -m && ~/.config/polybar/launch.sh
+bindsym $mod+Shift+slash exec ~/.scripts/change_monitor.sh mirror
+
+bindsym $mod+Ctrl+Shift+less exec ~/.scripts/change_monitor.sh reverse_extend_left
+bindsym $mod+Ctrl+Shift+greater exec ~/.scripts/change_monitor.sh reverse_extend_right
 
 bindsym $mod+bracketleft gaps inner all set 0
 bindsym $mod+bracketright gaps inner all set 15
