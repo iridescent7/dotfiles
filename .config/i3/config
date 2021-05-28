@@ -11,7 +11,9 @@ exec --no-startup-id ~/.scripts/launch_polybar.sh auto
 
 exec --no-startup-id dunst
 exec --no-startup-id clipit -d
-exec --no-startup-id nm-applet
+
+exec --no-startup-id xset s 300 5
+exec --no-startup-id xss-lock -n /usr/libexec/xsecurelock/dimmer -l -- env XSECURELOCK_AUTH_BACKGROUND_COLOR='rgb:2e/34/40' XSECURELOCK_AUTH_FOREGROUND_COLOR='rgb:d8/de/e9' XSECURELOCK_BLANK_TIMEOUT=5 XSECURELOCK_BLANK_DPMS_STATE=suspend XSECURELOCK_PASSWORD_PROMPT=time XSECURELOCK_SHOW_DATETIME=1 XSECURELOCK_DATETIME_FORMAT='%a, %d %B %Y %r' xsecurelock
 
 # Window settings
 for_window [class=".*"] border pixel 0
@@ -25,7 +27,7 @@ client.unfocused        #2e3440 #2e3440 #888888 #292d2e   #3b4252
 client.urgent           #2f343a #900000 #ffffff #900000   #bf616a
 client.placeholder      #000000 #0c0c0c #ffffff #000000   #3b4252
 
-client.background       #ffffff
+client.background       #2e3440
 
 # Keybinds
 set $mod Mod1
@@ -75,6 +77,10 @@ bindsym $mod+e layout toggle split
 bindsym $mod+Shift+f floating toggle
 bindsym $mod+Shift+d focus mode_toggle
 
+# Lock screen
+bindsym $mod+greater exec xset s activate
+
+# Monitor switching
 bindsym $mod+p exec ~/.scripts/change_monitor.sh laptop
 bindsym $mod+Shift+p exec ~/.scripts/change_monitor.sh hdmi
 

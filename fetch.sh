@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ROOT_CONFIG=(.scripts .bash_profile .bashrc .gtkrc-2.0 .xinitrc .Xresources)
-CONFIG=(cava clipit dunst flameshot fontconfig gtk-3.0 i3 kitty nvim picom polybar ranger rofi zathura)
+CONFIG=(cava clipit dunst flameshot fontconfig gtk-3.0 i3 kitty nvim picom polybar ranger rofi sxiv zathura)
 
 REPO_DIR="$(dirname "$0")"
 
