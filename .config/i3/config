@@ -86,8 +86,11 @@ bindsym $mod+Shift+slash exec ~/.scripts/change_monitor.sh mirror
 bindsym $mod+Ctrl+Shift+less exec ~/.scripts/change_monitor.sh reverse_extend_left
 bindsym $mod+Ctrl+Shift+greater exec ~/.scripts/change_monitor.sh reverse_extend_right
 
-bindsym $mod+bracketleft gaps inner all set 0
+bindsym $mod+bracketleft exec ~/.scripts/set_dpi.sh 120
+bindsym $mod+Shift+bracketleft exec ~/.scripts/set_dpi.sh 96
+
 bindsym $mod+bracketright gaps inner all set 15
+bindsym $mod+Shift+bracketright gaps inner all set 0
 
 set $ws1 "1"
 set $ws2 "2"
