@@ -40,3 +40,7 @@ echo "Xft.dpi: $DPI" | xrdb -merge
 
 # i3
 i3-msg -q restart
+
+# Dunst
+# restart dunst if already running
+killall -q dunst && dunst &

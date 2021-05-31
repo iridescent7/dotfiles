@@ -15,13 +15,13 @@ cleanup() {
 
 fetch() {
 	for dir in ${ROOT_CONFIG[@]}; do
-		cp -r "$HOME/$dir" "$REPO_DIR/$dir"
+		cp -r --reflink "$HOME/$dir" "$REPO_DIR/$dir"
 	done
 
 	mkdir "$REPO_DIR/.config"
 
 	for dir in ${CONFIG[@]}; do
-		cp -r "$HOME/.config/$dir" "$REPO_DIR/.config/$dir"
+		cp -r --reflink "$HOME/.config/$dir" "$REPO_DIR/.config/$dir"
 	done
 }
 

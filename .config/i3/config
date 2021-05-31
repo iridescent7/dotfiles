@@ -1,6 +1,6 @@
 # Application startups
 exec --no-startup-id xiccd
-exec --no-startup-id brightnessctl s 12%
+exec --no-startup-id brightnessctl s 20%
 exec --no-startup-id brightnessctl -dasus::kbd_backlight s 0
 
 exec --no-startup-id xrdb -merge ~/.Xresources
