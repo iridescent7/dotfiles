@@ -2,8 +2,8 @@
 
 export PATH="$PATH:$HOME/.local/bin"
 
-export EDITOR='/bin/nvim'
-export SUDO_ASKPASS='/bin/gnome-ssh-askpass'
+export EDITOR='/usr/bin/nvim'
+export SUDO_ASKPASS='/usr/bin/gnome-ssh-askpass'
 
 # Get the aliases and functions
 [ -f $HOME/.bashrc ] && . $HOME/.bashrc

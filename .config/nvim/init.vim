@@ -58,6 +58,7 @@ syntax enable
 
 call plug#begin(stdpath('data') . '/plugged')
 Plug 'sheerun/vim-polyglot'
+Plug 'tpope/vim-ragtag'
 Plug 'vim-airline/vim-airline'
 Plug 'preservim/nerdtree'
 Plug 'ryanoasis/vim-devicons'
@@ -83,3 +84,11 @@ nnoremap <c-p> :bp<cr>
 
 nnoremap <leader>n :NERDTreeFocus<cr>
 nnoremap <leader>t :NERDTreeToggle<cr>
+
+inoremap " ""<left>
+inoremap ' ''<left>
+inoremap ( ()<left>
+inoremap [ []<left>
+inoremap { {}<left>
+inoremap {<cr> {<cr>}<esc>O
+inoremap {;<cr> {<cr>};<esc>O
