@@ -13,7 +13,7 @@ exec --no-startup-id dunst
 exec --no-startup-id clipit -d
 
 exec --no-startup-id xset s 300 5
-exec --no-startup-id xss-lock -n /usr/libexec/xsecurelock/dimmer -l -- env XSECURELOCK_AUTH_BACKGROUND_COLOR='rgb:2e/34/40' XSECURELOCK_AUTH_FOREGROUND_COLOR='rgb:d8/de/e9' XSECURELOCK_BLANK_TIMEOUT=5 XSECURELOCK_BLANK_DPMS_STATE=suspend XSECURELOCK_PASSWORD_PROMPT=time XSECURELOCK_SHOW_DATETIME=1 XSECURELOCK_DATETIME_FORMAT='%a, %d %B %Y %r' xsecurelock
+exec --no-startup-id xss-lock -n /usr/libexec/xsecurelock/dimmer -l -- env XSECURELOCK_AUTH_BACKGROUND_COLOR='rgb:2e/34/40' XSECURELOCK_AUTH_FOREGROUND_COLOR='rgb:d8/de/e9' XSECURELOCK_BLANK_TIMEOUT=3 XSECURELOCK_BLANK_DPMS_STATE=off XSECURELOCK_PASSWORD_PROMPT=time XSECURELOCK_SHOW_DATETIME=1 XSECURELOCK_DATETIME_FORMAT='%a, %d %B %Y %r' xsecurelock
 
 # Window settings
 for_window [class=".*"] border pixel 0
@@ -42,11 +42,13 @@ bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl s 10%-
 
 floating_modifier $mod
 
-bindsym $mod+d exec rofi -show drun
-bindsym $mod+s exec flameshot gui -p ~/Pictures/Screenshots
-bindsym Print exec flameshot full -p ~/Pictures/Screenshots
+bindsym $mod+e exec --no-startup-id thunar
+bindsym $mod+d exec --no-startup-id rofi -show drun
 
-bindsym $mod+Return exec kitty
+bindsym $mod+Return exec --no-startup-id kitty
+
+bindsym $mod+s exec --no-startup-id flameshot gui -p ~/Pictures/Screenshots
+bindsym Print exec --no-startup-id flameshot full -p ~/Pictures/Screenshots
 
 bindsym $mod+g kill
 
@@ -72,28 +74,28 @@ bindsym $mod+f fullscreen toggle
 
 bindsym $mod+q layout stacking
 bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
+bindsym $mod+a layout toggle split
 
 bindsym $mod+Shift+f floating toggle
 bindsym $mod+Shift+d focus mode_toggle
 
 # Lock screen
-bindsym $mod+greater exec xset s activate
+bindsym $mod+greater exec --no-startup-id xset s activate
 
 # Monitor switching
-bindsym $mod+p exec ~/.scripts/change_monitor.sh laptop
-bindsym $mod+Shift+p exec ~/.scripts/change_monitor.sh hdmi
+bindsym $mod+p exec --no-startup-id ~/.scripts/change_monitor.sh laptop
+bindsym $mod+Shift+p exec --no-startup-id ~/.scripts/change_monitor.sh hdmi
 
-bindsym $mod+Shift+less exec ~/.scripts/change_monitor.sh extend_left
-bindsym $mod+Shift+greater exec ~/.scripts/change_monitor.sh extend_right
+bindsym $mod+Shift+less exec --no-startup-id ~/.scripts/change_monitor.sh extend_left
+bindsym $mod+Shift+greater exec --no-startup-id ~/.scripts/change_monitor.sh extend_right
 
-bindsym $mod+Shift+slash exec ~/.scripts/change_monitor.sh mirror
+bindsym $mod+Shift+slash exec --no-startup-id ~/.scripts/change_monitor.sh mirror
 
-bindsym $mod+Ctrl+Shift+less exec ~/.scripts/change_monitor.sh reverse_extend_left
-bindsym $mod+Ctrl+Shift+greater exec ~/.scripts/change_monitor.sh reverse_extend_right
+bindsym $mod+Ctrl+Shift+less exec --no-startup-id ~/.scripts/change_monitor.sh reverse_extend_left
+bindsym $mod+Ctrl+Shift+greater exec --no-startup-id ~/.scripts/change_monitor.sh reverse_extend_right
 
-bindsym $mod+bracketleft exec ~/.scripts/set_dpi.sh 120
-bindsym $mod+Shift+bracketleft exec ~/.scripts/set_dpi.sh 96
+bindsym $mod+bracketleft exec --no-startup-id ~/.scripts/set_dpi.sh 120
+bindsym $mod+Shift+bracketleft exec --no-startup-id ~/.scripts/set_dpi.sh 96
 
 bindsym $mod+bracketright gaps inner all set 15
 bindsym $mod+Shift+bracketright gaps inner all set 0
@@ -136,4 +138,4 @@ bindsym $mod+Ctrl+less move workspace to output left
 
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exec --no-startup-id "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"

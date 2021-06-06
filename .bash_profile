@@ -10,5 +10,5 @@ export SUDO_ASKPASS='/bin/gnome-ssh-askpass'
 
 # Autostart X on display and tty1
 if [ -z "$DISPLAY" ] && [ "$(fgconsole)" -eq 1 ]; then
-	exec startx &>/dev/null
+	startx &>/dev/null
 fi
