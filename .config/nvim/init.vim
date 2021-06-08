@@ -61,12 +61,10 @@ Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-ragtag'
 Plug 'vim-airline/vim-airline'
 Plug 'preservim/nerdtree'
-Plug 'ryanoasis/vim-devicons'
 Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'ryanoasis/vim-devicons'
 Plug 'sainnhe/sonokai'
 call plug#end()
-
-let g:NERDTreeGitStatusConcealBrackets = 1
 
 let g:sonokai_style = 'andromeda'
 let g:sonokai_enable_italic = 1

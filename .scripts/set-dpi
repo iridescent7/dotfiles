@@ -43,4 +43,5 @@ i3-msg -q restart
 
 # Dunst
 # restart dunst if already running
+sleep 0.1
 killall -q dunst && dunst &
