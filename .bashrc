@@ -18,10 +18,8 @@ load() {
                 export PYENV_ROOT="$HOME/.pyenv"
                 export PATH="$PYENV_ROOT/bin:$PATH"
 
-                # tell dumbware to shut the fuck up
                 export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 
-                # leave problems to our users since we dont care
                 export OLD_PS1="$PS1"
                 export PROMPT_COMMAND='[ -n "$VIRTUAL_ENV" ] && PS1="(${VIRTUAL_ENV##*/}) $OLD_PS1" || PS1="$OLD_PS1"'
 
