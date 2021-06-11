@@ -17,7 +17,6 @@ exec --no-startup-id xss-lock -n /usr/libexec/xsecurelock/dimmer -l -- env XSECU
 
 # Window settings
 for_window [class=".*"] border pixel 0
-gaps top 20
 
 font pango:SF Mono Semibold 11
 
@@ -96,9 +95,6 @@ bindsym $mod+Ctrl+Shift+greater exec --no-startup-id ~/.scripts/change_monitor.s
 
 bindsym $mod+bracketleft exec --no-startup-id ~/.scripts/set-dpi 120
 bindsym $mod+Shift+bracketleft exec --no-startup-id ~/.scripts/set-dpi 96
-
-bindsym $mod+bracketright gaps inner all set 15
-bindsym $mod+Shift+bracketright gaps inner all set 0
 
 set $ws1 "1"
 set $ws2 "2"

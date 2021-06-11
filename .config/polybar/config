@@ -37,8 +37,7 @@ tray-background = ${root.background}
 tray-padding = 0
 tray-scale = 1.0
 
-wm-restack = i3
-override-redirect = true
+override-redirect = false
 
 dpi = 96
 
@@ -165,7 +164,7 @@ type = internal/temperature
 interval = 1.0
 thermal-zone = 0
 
-hwmon-path = /sys/devices/platform/coretemp.0/hwmon/hwmon6/temp1_input
+hwmon-path = ${env:TEMP_HWMON_PATH}
 warn-temperature = 80
 
 format = <label>
