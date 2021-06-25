@@ -12,7 +12,7 @@ done
 
 rm -rf "$REPO_DIR/.config"
 
-# fetching
+# fetch files
 for dir in ${ROOT_CONFIG[@]}; do
 	cp -r --reflink "$HOME/$dir" "$REPO_DIR/$dir"
 done

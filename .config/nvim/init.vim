@@ -83,10 +83,7 @@ nnoremap <c-p> :bp<cr>
 nnoremap <leader>n :NERDTreeFocus<cr>
 nnoremap <leader>t :NERDTreeToggle<cr>
 
-inoremap " ""<left>
-inoremap ' ''<left>
-inoremap ( ()<left>
-inoremap [ []<left>
-inoremap { {}<left>
+nnoremap <cr> o<esc>
+
 inoremap {<cr> {<cr>}<esc>O
 inoremap {;<cr> {<cr>};<esc>O

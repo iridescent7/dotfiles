@@ -90,8 +90,8 @@ bindsym $mod+Shift+greater exec --no-startup-id ~/.scripts/change_monitor.sh ext
 
 bindsym $mod+Shift+slash exec --no-startup-id ~/.scripts/change_monitor.sh mirror
 
-bindsym $mod+Ctrl+Shift+less exec --no-startup-id ~/.scripts/change_monitor.sh reverse_extend_left
-bindsym $mod+Ctrl+Shift+greater exec --no-startup-id ~/.scripts/change_monitor.sh reverse_extend_right
+#bindsym $mod+Ctrl+Shift+less exec --no-startup-id ~/.scripts/change_monitor.sh reverse_extend_left
+#bindsym $mod+Ctrl+Shift+greater exec --no-startup-id ~/.scripts/change_monitor.sh reverse_extend_right
 
 bindsym $mod+bracketleft exec --no-startup-id ~/.scripts/set-dpi 120
 bindsym $mod+Shift+bracketleft exec --no-startup-id ~/.scripts/set-dpi 96
@@ -106,6 +106,9 @@ set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
+
+bindsym $mod+Left workspace prev
+bindsym $mod+Right workspace next
 
 bindsym $mod+1 workspace number $ws1
 bindsym $mod+2 workspace number $ws2

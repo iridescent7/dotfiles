@@ -10,6 +10,8 @@ alias grep='grep --color=auto'
 alias ip='ip --color=auto'
 alias ls='ls --color=auto'
 
+alias init-ssh='eval "$(ssh-agent -s)"'
+
 # Load pyenv and nvm on demand to avoid unnecessary startup overhead
 load() {
     case "$1" in
